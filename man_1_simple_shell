@@ -1,0 +1,79 @@
+.Simple Shell Manual Page
+
+.SH NAME
+
+.B simple_shell - hsh
+- command line interpreter or shell
+
+.SH SYNOPSIS
+
+.B  ./hsh
+.I (no options yet)
+
+
+.SH DESCRIPTION
+
+The shell is a command line interface (CLI) program that takes commands from the keyboard and gives them to the operating system to perform.
+
+.SH OVERVIEW
+
+Reading from either the terminal or files, simple_shell interprets and executes commands.
+
+
+.SH INVOCATION
+
+Compile simple_shell with the GNU Compiler Collection, preferably using gcc plus the below specified flags, as per this example (note the use of the * wildcard which enables all related .c files to be compiled concurrently):
+.P
+.RS
+.B $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+.P
+.RE
+simple_shell can be run in interactive mode by entering the below command on the command line followd by "enter." Note that the prompt ('$') will appear and you will then be in interactive mode and able to enter commands followed by "enter." 
+.P
+.RS
+.B $ ./hsh
+.P
+.RE
+simple_shell can be run in non-interactive mode through the use of shell scripts. This can involve the use of piping ('|'):
+.P
+.RS
+.B echo 'pwd' | ./hsh
+
+.SH EXECUTABLES
+
+Example of executables:
+.IP
+.br
+.\&
+.RS
+\&$ echo "Example of executables"
+.br
+\&"Example of executables"
+.br
+\&$
+
+.SH BUILTINS
+
+The following builtin commands are supported:
+
+.IT
+.B env
+- prints the environment variables
+
+.B exit
+- exits the program
+
+.B setenv
+- sets the environment
+
+.B unsetenv
+- removes elements from the environment
+
+
+.SH BUGS
+No known bugs at this writing (Aug 16, 2021).
+Please report any issues to the authors.
+
+.SH AUTHOR
+
+Sebagadis Kahsay <sebexk3@gmail.com>
