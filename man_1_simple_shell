@@ -52,23 +52,6 @@ Example of executables:
 .br
 \&$
 
-.SH BUILTINS
-
-The following builtin commands are supported:
-
-.IT
-.B env
-- prints the environment variables
-
-.B exit
-- exits the program
-
-.B setenv
-- sets the environment
-
-.B unsetenv
-- removes elements from the environment
-
 
 .SH BUGS
 No known bugs at this writing (Aug 16, 2021).
@@ -77,3 +60,4 @@ Please report any issues to the authors.
 .SH AUTHOR
 
 Sebagadis Kahsay <sebexk3@gmail.com>
+Eugene Simiyu <wechuli017@gmail.com>
