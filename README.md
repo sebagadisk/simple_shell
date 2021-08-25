@@ -42,5 +42,6 @@ The end product should:
 
 ### AUTHORS
 
+Sebagadis Kahsay <sebexk3@gmail.com>
 Eugene Simiyu <wechuli017@gmail.com>
 
