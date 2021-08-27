@@ -5,6 +5,7 @@
  * @args: arguments saved on getline
  * @argv: arguments passed
  * @env: environment variable
+ * @stad_exit: exit command
  * Return: 0 success
  */
 int _path(char *args, char **argv, char **env, int *stad_exit)
