@@ -10,48 +10,53 @@
 .B  ./hsh
 .I (no options yet)
 
-
 .SH DESCRIPTION
 
 The shell is a command line interface (CLI) program that takes commands from the keyboard and gives them to the operating system to perform.
 
-.SH OVERVIEW
+.SH ARGUMENTS
+From input, the first argument is assumed to be an executable command file. It follows the parameters taken by that particular command.
 
-Reading from either the terminal or files, simple_shell interprets and executes commands.
+.B hsh
+is the executable that will interpret the command. It executes it and then, exit. With exit, an exit status returns with the status of the previous command executed. For instance, status is 0 on non-execution.
 
-
-.SH INVOCATION
-
-Compile simple_shell with the GNU Compiler Collection, preferably using gcc plus the below specified flags, as per this example (note the use of the * wildcard which enables all related .c files to be compiled concurrently):
-.P
-.RS
-.B $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
-.P
-.RE
-simple_shell can be run in interactive mode by entering the below command on the command line followd by "enter." Note that the prompt ('$') will appear and you will then be in interactive mode and able to enter commands followed by "enter." 
-.P
-.RS
-.B $ ./hsh
-.P
-.RE
-simple_shell can be run in non-interactive mode through the use of shell scripts. This can involve the use of piping ('|'):
-.P
-.RS
-.B echo 'pwd' | ./hsh
-
-.SH EXECUTABLES
-
-Example of executables:
-.IP
+.SH INTEREACTIVE MODE EXAMPLE
+.PP
+$ ./hsh
 .br
-.\&
-.RS
-\&$ echo "Example of executables"
+shell$ /bin/ls
 .br
-\&"Example of executables"
+hsh main.c shell.c
 .br
-\&$
+shell$ exit
+.br
+$
+.br
+.PP
+.PP
+.SH NON-INTERACTIVE MODE EXAMPLE
+.PP
+$ echo "/bin/ls" | . /hsh
+.br
+hsh main.c shell.c
+.br
 
+.SH ENVIRONMENT
+When the simple shell is invoked, it is given an array of strings called the enviroment. Note that string is a copy. The strings are environment variables and are represented in this format
+.B name=value
+
+.SH BUILTIN COMMANDS
+The following commands below are called and handled directly in the shell. Therefore, these commands do not need to call upon a child process to be executed. However, with the exit builtin it returns an exits status of 0 on successful execution. In failure, the exti will return 0 when the command invoked can no execute. also, it will return 1 when the command is not found. It will return a value of 2 in failure misuse of the shell builtin
+.br
+the following commands are executed in the shell as builtins
+
+.TP
+.B exit
+- Exits the shell
+
+.TP
+.B env
+- Prints the variables from the current enviroment
 
 .SH BUGS
 No known bugs at this writing (Aug 16, 2021).
